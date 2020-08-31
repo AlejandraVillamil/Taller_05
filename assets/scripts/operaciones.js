@@ -6,6 +6,7 @@ function operaciones(operador){
     let  n1=parseInt(document.getElementById('n1').value)
     //Traer numero 2
     let  n2=parseInt(document.getElementById('n2').value)
+
     if(isNaN(n1) ||isNaN(n2) ){
         alert('No es posible realizar la operación intenta de nuevo, ingresando ambos números')
     }else{
@@ -18,16 +19,19 @@ function operaciones(operador){
             //Función resta
             case"resta":
             result= n1-n2;
+
             print()
             break;
             //Función multiplicación
             case"multiplicacion":
             result= n1*n2;
+
             print()
             break;
             //Función división  
             case"division":
             result= n1/n2;
+
             print()
             break;
             //Error             
@@ -36,11 +40,20 @@ function operaciones(operador){
             console.log('error')
             break;
         }
+  
             function print(){
-                result_onscreen=document.getElementById('resultado')
-                result_onscreen.innerText = result
+                var msg = document.getElementById("msg");
+                var h1 = document.createElement("h1");
+                h1.innerHTML = result;
+                msg.appendChild(h1);
                 document.getElementById('n1').value="";
                 document.getElementById('n2').value="";
+          
             }
+            
+
+
+
     }
     }
+
